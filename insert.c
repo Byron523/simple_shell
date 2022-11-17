@@ -71,8 +71,7 @@ char *insert(char **s1, char **path)
 	struct stat verify;
 
 	cwd = getcwd(NULL, 0);
-	i = 0;
-	j = 0;
+	i = 0, j = 0;
 	dpath = NULL, tmp = NULL;
 	if (comp(s1[0], "/") || comp(s1[0], "."))
 	{

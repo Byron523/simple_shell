@@ -14,7 +14,6 @@ int while_loop(char **av __attribute__((unused)))
 	int (*builtin)() = NULL;
 	char **args = NULL;
 
-	size = 1024;
 	while (1)
 	{
 		write(STDOUT_FILENO, "($) ", 4);
@@ -45,7 +44,7 @@ int while_loop(char **av __attribute__((unused)))
 
 		cmd = insert(cmd_input, args);
 		if (cmd == NULL)
-			write(STDOUT_FILENO, "command not found\n", 18);
+			write(STDOUT_FILENO, "command NOT found\n", 18);
 		else
 			execute(cmd, cmd_input);
 

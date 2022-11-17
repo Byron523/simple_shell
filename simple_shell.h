@@ -31,6 +31,7 @@ extern char **environ;
  } b_s;
 
 int while_loop(char **av);
+int string_size(char *s);
 int cmd_count(char *buf);
 char **splits(char *buf, int size);
 char *str_dup(char *buf);
