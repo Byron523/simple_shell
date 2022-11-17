@@ -1,6 +1,28 @@
 #include "simple_shell.h"
 
 /**
+ * concat - a function to concat strings
+ * @s1: string 1, desc
+ * @s2: string 2, src
+ * Return: s1
+*/
+char *concat(char *s1, char *s2)
+{
+	int a, b;
+
+	for (a = 0; s1[a] != '\0'; a++)
+		;
+
+	for (b = 0; s2[b] != '\0'; b++)
+	{
+		s1[a + b] = s2[b];
+	}
+	s1[a + b] = '\0';
+
+	return (s1);
+}
+
+/**
  * equate - just like comp  function below
  * @s: string one
  * @s2: second string
@@ -57,7 +79,7 @@ char *insert(char **s1, char **path)
 		_free(1, cwd);
 		cwd = NULL;
 
-		for (k = 0; s1[k] != '\0'; k++)
+		for (k = 0; s1[k] != NULL; k++)
 			;
 
 		tmp = malloc(sizeof(char *) * k);
@@ -96,26 +118,4 @@ char *insert(char **s1, char **path)
 	}
 	dpath = tmp, _free(1, cwd), cwd = NULL;
 	return (dpath);
-}
-
-/**
- * concat - a function to concat strings
- * @s1: string 1, desc
- * @s2: string 2, src
- * Return: s1
-*/
-char *concat(char *s1, char *s2)
-{
-	int a, b;
-
-	for (a = 0; s1[a] != '\0'; a++)
-		;
-
-	for (b = 0; s2[b] != '\0'; b++)
-	{
-		s1[a + b] = s2[b];
-	}
-	s1[a + b] = '\0';
-
-	return (s1);
 }

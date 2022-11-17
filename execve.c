@@ -20,7 +20,7 @@ int execute(char *s1, char **arg)
 		{
 			_free(1, s1);
 			s1 = NULL;
-			/*error = errno; */
+			error = errno;
 			exit(error);
 		}
 		else
