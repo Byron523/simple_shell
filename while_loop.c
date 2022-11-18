@@ -7,7 +7,6 @@
  */
 int while_loop(char **buf __attribute__((unused)))
 {
-	/*size_t size;*/
 	char *buffer = NULL, *cmd = NULL;
 	char **cmd_input = NULL;
 	int (*builtin)() = NULL;
@@ -30,7 +29,7 @@ int while_loop(char **buf __attribute__((unused)))
 		if (builtin)
 		{
 			if (builtin == left)
-				free_path(cmd_input, args, buf, NULL);
+				free_path(cmd_input, args, buffer, NULL);
 			builtin();
 
 			free_path(cmd_input, NULL, NULL, NULL);

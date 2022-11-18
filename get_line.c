@@ -1,13 +1,13 @@
 #include "shell.h"
 /**
- * append - append a char to a string
+ * _append - append a char to a string
  * @buf: allocated bufer string
- * @pntr to size holding the string
+ * @pntr: to size holding the string
  * @s: input char to append
  * @i: the index pos
  * Return: 1 otherwise 0
  */
-int append(char **buf, size_t *pntr, char s,long unsigned int i)
+int ap_ppend(char **buf, size_t *pntr, char s, unsigned long int i)
 {
 	size_t c;
 	char *buffer;
@@ -53,15 +53,15 @@ char *get_line()
 		exit(errno);
 	}
 	c = fgetc(stdin);
-	
+
 	while (c != EOF)
 	{
 		if (c == '\n')
 		{
-			append(&buffer, &bufsize, '\0', i);
+			ap_ppend(&buffer, &bufsize, '\0', i);
 			break;
 		}
-		append(&buffer, &bufsize, c, i);
+		ap_ppend(&buffer, &bufsize, c, i);
 		i++;
 		c = fgetc(stdin);
 	}

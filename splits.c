@@ -10,9 +10,7 @@ char **splits(char *buf, int size)
 {
 	char *delim = " =:'\n''\t'";
 	int i;
-	char **token, *token2 = NULL;
-
-	token = malloc(sizeof(char *) * size);
+	char **token = malloc(sizeof(char *) * size), *token2 = NULL;
 	if (token == NULL)
 		return (NULL);
 

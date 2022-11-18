@@ -10,7 +10,6 @@ char **construct(char *buf)
 	int i;
 	char **cmd_input = NULL;
 
-	i = 0;
 	i = cmd_count(buf);
 	cmd_input = splits(buf, i);
 	if (cmd_input == NULL)

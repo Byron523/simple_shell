@@ -65,12 +65,11 @@ char *comp(char *s, char *s2)
  */
 char *insert(char **s1, char **path)
 {
-	char *cwd;
+	char *cwd = getcwd(NULL, 0);
 	int i, j;
 	char *tmp, *dpath;
 	struct stat verify;
 
-	cwd = getcwd(NULL, 0);
 	i = 0, j = 0;
 	dpath = NULL, tmp = NULL;
 	if (comp(s1[0], "/") || comp(s1[0], "."))

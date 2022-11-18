@@ -29,8 +29,10 @@ extern char **environ;
  	char *b_n;
  	int (*b_f)();
  } b_s;
+
 /* get_line */
 char *get_line();
+int ap_ppend(char **buf, size_t *pntr, char s, unsigned long int i);
 
 /* while_loop */
 int while_loop(char **av);
