@@ -78,7 +78,7 @@ char *insert(char **s1, char **path)
 		_free(1, cwd);
 		cwd = NULL;
 
-		tmp = malloc(sizeof(char *) * string_size(s1[0]));
+		tmp = malloc(sizeof(char *) * (string_size(s1[0])));
 		str_cpy(tmp, s1[0]);
 		return (tmp);
 	}

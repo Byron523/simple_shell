@@ -29,6 +29,8 @@ extern char **environ;
  	char *b_n;
  	int (*b_f)();
  } b_s;
+/* get_line */
+char *get_line();
 
 /* while_loop */
 int while_loop(char **av);

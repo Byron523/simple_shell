@@ -7,7 +7,7 @@
  */
 int while_loop(char **buf __attribute__((unused)))
 {
-	size_t size;
+	/*size_t size;*/
 	char *buffer = NULL, *cmd = NULL;
 	char **cmd_input = NULL;
 	int (*builtin)() = NULL;
@@ -16,7 +16,7 @@ int while_loop(char **buf __attribute__((unused)))
 	while (1)
 	{
 		write(STDOUT_FILENO, "($) ", 4);
-		getline(&buffer, &size, stdin);
+		buffer = get_line();
 		is_valid(buffer, 0, cmd_input, args);
 
 		if (buffer[0] == 10 || buffer[0] == 9)

@@ -10,11 +10,13 @@ char *path_locater()
 	int i;
 
 	s = NULL;
-	for (i = 0; environ[i] != NULL; i++)
+	i = 0;
+	/*for (i = 0; environ[i] != NULL; i++) */
+	while (environ[i])
 	{
 		if (_strcmp(environ[i], "PATH") == 0)
 		{
-			s = malloc(sizeof(char *) * string_size(environ[i]));
+			s = malloc(sizeof(char *) * (string_size(environ[i])));
 			if (s == NULL)
 			{
 				_free(1, s);
@@ -23,6 +25,7 @@ char *path_locater()
 			str_cpy(s, environ[i]);
 			break;
 		}
+		i++;
 	}
 	return (s);
 }

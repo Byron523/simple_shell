@@ -11,12 +11,12 @@ char *str_dup(char *buf)
 	int i, size;
 
 	size = string_size(buf);
-	cpy = malloc(sizeof(char) * (size = 1));
+	cpy = malloc(sizeof(char) * (size + 1));
 	if (cpy == NULL)
 		return (NULL);
 
 	for (i = 0; i < size; i++)
 		cpy[i] = buf[i];
 	cpy[i] = '\0';
-		return (cpy);
+	return (cpy);
 }
