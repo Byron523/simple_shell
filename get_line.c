@@ -20,8 +20,7 @@ int ap_ppend(char **buf, size_t *pntr, char s, unsigned long int i)
 			continue;
 	else
 		c = *pntr;
-	buffer = *buf;
-
+	buffer = *buf;S
 	while (c <= i)
 	{
 		c *= 2;
