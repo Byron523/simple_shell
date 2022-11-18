@@ -1,9 +1,9 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
- * get_path - looks for enviro path
- * Return: pntr to address of tokenized dir
-*/
+ * get_path - looks for paths in diff functions
+ * Return: pntr to an address to tokenized dir
+ */
 char **get_path()
 {
 	char *tmp = NULL;
@@ -24,7 +24,7 @@ char **get_path()
  * change_sign - changes the sign of the path
  * @s: input string
  * Return: nothing
-*/
+ */
 void change_sign(char *s)
 {
 	char **ptr = NULL;

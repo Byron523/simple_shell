@@ -1,15 +1,15 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
- * _free - frees memory allocated
- * @i: int value
- * Return: none
-*/
+ * _free - frees alocated memory
+ * @i: number of arguments
+ * Return: nothing
+ */
 void _free(int i, ...)
 {
 	int j;
-	char **val1 = NULL;
 	char *val2 = NULL;
+	char **val1 = NULL;
 	va_list args;
 
 	va_start(args, i);

@@ -1,10 +1,10 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
- * builtin_func - looks for built in functions
- * @s: in put cmd
- * Return: an pointer to func
-*/
+ * builtin_func - looks for builtin functions
+ * @s: input command
+ * Return: an int to a pos of the arg
+ */
 int (*builtin_func(char *s))()
 {
 	int i, j;

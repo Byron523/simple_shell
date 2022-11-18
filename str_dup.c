@@ -1,24 +1,22 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
- * str_dup - duplicates a string
+ * str_dup - duplictes a string
  * @buf: input string
- * Return: duplicate string
-*/
+ * Return: a pointer to the duplicate string
+ */
 char *str_dup(char *buf)
 {
 	char *cpy;
 	int i, size;
 
-	for (size = 0; buf[size] != '\0'; size++)
-		;
-
-	cpy = malloc(sizeof(char) * (size + 1));
+	size = string_size(buf);
+	cpy = malloc(sizeof(char) * (size = 1));
 	if (cpy == NULL)
 		return (NULL);
 
 	for (i = 0; i < size; i++)
 		cpy[i] = buf[i];
 	cpy[i] = '\0';
-	return (cpy);
+		return (cpy);
 }

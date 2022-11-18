@@ -1,11 +1,11 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
- * concat - a function to concat strings
+ * concat - a fucntion that concat strings
  * @s1: string 1, desc
  * @s2: string 2, src
  * Return: s1
-*/
+ */
 char *concat(char *s1, char *s2)
 {
 	int a, b;
@@ -23,11 +23,11 @@ char *concat(char *s1, char *s2)
 }
 
 /**
- * equate - just like comp  function below
+ * equate - equates two strings
  * @s: string one
  * @s2: second string
- * Return: int
-*/
+ * Return: an int
+ */
 int equate(char *s, char *s2)
 {
 	while (*s && *s2)
@@ -41,11 +41,11 @@ int equate(char *s, char *s2)
 }
 
 /**
- * comp - compares two strings at a given pos
+ * comp -  compares two strings
  * @s: string one
  * @s2: second string
  * Return: pointer to first occurence
-*/
+ */
 char *comp(char *s, char *s2)
 {
 	while (*s != '\0')
@@ -60,13 +60,13 @@ char *comp(char *s, char *s2)
 /**
  * insert - inserts cmd into appropriate pos
  * @s1: the cmd
- * @path: the position or path
+ * @path: the position path
  * Return: path or a given cmd
-*/
+ */
 char *insert(char **s1, char **path)
 {
 	char *cwd;
-	int i, j, k, l;
+	int i, j;
 	char *tmp, *dpath;
 	struct stat verify;
 
@@ -78,10 +78,7 @@ char *insert(char **s1, char **path)
 		_free(1, cwd);
 		cwd = NULL;
 
-		for (k = 0; s1[k] != NULL; k++)
-			;
-
-		tmp = malloc(sizeof(char *) * k);
+		tmp = malloc(sizeof(char *) * string_size(s1[0]));
 		str_cpy(tmp, s1[0]);
 		return (tmp);
 	}
@@ -92,13 +89,7 @@ char *insert(char **s1, char **path)
 			chdir(path[i]);
 			if (stat(s1[0], &verify) == 0)
 			{
-				for (l = 0; path[l] != NULL; l++)
-					;
-
-				for (k = 0; s1[k] != NULL; k++)
-					;
-
-				j = l + 1 + k;
+				j = string_size(path[i]) + 1 + string_size(s1[0]);
 				tmp = malloc(sizeof(char *) * j);
 				str_cpy(tmp, path[i]);
 				concat(tmp, "/"), concat(tmp, path[i]);

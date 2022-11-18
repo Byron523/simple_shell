@@ -1,10 +1,10 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
- * splits - splits line using the tokenization
- * @buf: input buffer
- * @size: size of characters to be split
- * Return: a split string
+ * splits - splits a string using tokeinzation
+ * @buf: input string
+ * @size: sizeof chars to be split
+ * Return: a pointer to the splitted string
  */
 char **splits(char *buf, int size)
 {

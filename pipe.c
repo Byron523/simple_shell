@@ -1,10 +1,9 @@
-#include "simple_shell.h"
-
+#include "shell.h"
 /**
- * piper - executes command lines entered by pipe
- * @av: program name
+ * piper - executes commands entered through pipes
+ * @av: pg
  * Return: 0
-*/
+ */
 int piper(char **av __attribute__((unused)))
 {
 	size_t size;
@@ -30,9 +29,7 @@ int piper(char **av __attribute__((unused)))
 		{
 			if (builtin == left)
 				free_path(cmd_input, args, buf, NULL);
-
 			builtin();
-
 			free_path(cmd_input, NULL, NULL, NULL);
 			continue;
 		}

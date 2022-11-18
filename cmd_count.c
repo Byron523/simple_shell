@@ -1,16 +1,15 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
- * cmd_count - counts number of cmd line arguments
- * @buf: the input buffer from getline
+ * cmd_count - counts the number of commands
+ * @buf: input commands from the user
  * Return: number of arguments
  */
 int cmd_count(char *buf)
 {
-	char *delim = " =:'\n''\t'";
-	int i, j, k;
+	int i = 0, j, k = 0;
+	char *delim = " =:'\''\t'";
 
-	i = 0, k = 0;
 	while (buf[i] != '\0')
 	{
 		for (j = 0; delim[j] != '\0'; j++)

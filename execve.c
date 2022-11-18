@@ -1,11 +1,11 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
  * execute - execute the given cmd
  * @s1: the cmd given
  * @arg: cmd arguments
  * Return: 0 or error number
-*/
+ */
 int execute(char *s1, char **arg)
 {
 	int status;

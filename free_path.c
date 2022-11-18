@@ -1,36 +1,36 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
- * free_path - frees memory
- * @ptr1: 1st pntr
- * @ptr2: 2nd pntr
- * @ptr3: 3rd pntr
- * @ptr4: 4th pntr
- * Return: nothing
-*/
-void free_path(char **ptr1, char **ptr2, char *ptr3, char *ptr4)
+ * free_path - frees memory of a path
+ * @pt1: a double pointer
+ * @pt2: a second pointer
+ * @pnt: third pointer
+ * @pnt1: anohter oner
+ * Return: non
+ */
+void free_path(char **pt1, char **pt2, char *pnt, char *pnt1)
 {
-	if (ptr1 != NULL)
+	if (pt1 != NULL)
 	{
-		_free(2, ptr1);
-		ptr1 = NULL;
+		_free(2, pt1);
+		pt1 = NULL;
 	}
 
-	if (ptr2 != NULL)
+	if (pt2 != NULL)
 	{
-		_free(2, ptr2);
-		ptr2 = NULL;
+		_free(2, pt2);
+		pt2 = NULL;
 	}
 
-	if (ptr3 != NULL)
+	if (pnt != NULL)
 	{
-		free(ptr3);
-		ptr3 = NULL;
+		free(pnt);
+		pnt = NULL;
 	}
 
-	if (ptr4 != NULL)
+	if (pnt1 != NULL)
 	{
-		free(ptr4);
-		ptr4 = NULL;
+		free(pnt1);
+		pnt1 = NULL;
 	}
 }

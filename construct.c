@@ -1,10 +1,10 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
- * construct - looks for pipes in a command
- * @buf: input command
+ * construct - looks for pipes in the commands
+ * @buf: input command(s)
  * Return: the commands
-*/
+ */
 char **construct(char *buf)
 {
 	int i;
@@ -18,6 +18,5 @@ char **construct(char *buf)
 		_free(2, cmd_input);
 		cmd_input = NULL;
 	}
-
 	return (cmd_input);
 }

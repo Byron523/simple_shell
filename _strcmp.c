@@ -1,11 +1,11 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
- * _strcmp - compares two strings if they are equal
- * @s1: input string one
- * @s2: input string two
+ * _strcmp -  compares two strings for equality
+ * @s1: first string to check
+ * @s2: second input string
  * Return: 0 if equal
-*/
+ */
 int _strcmp(char *s1, char *s2)
 {
 	int i, j;

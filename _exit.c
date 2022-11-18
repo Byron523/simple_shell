@@ -1,11 +1,9 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
- * left - exit frm the terminal
- * 
- * Return: always 0
-*/
-
+ * left - exit from the terminal
+ * Return: exit code
+ */
 int left(void)
 {
 	exit(0);

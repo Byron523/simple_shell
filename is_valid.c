@@ -1,18 +1,18 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
  * is_valid - checks the validity of a line
  * @buf: input buffer
- * @i: size of buf
+ * @i: size
  * @arg: arguments
- * @args: env args
+ * @args: environ arguments
  * Return: 0
-*/
+ */
 void is_valid(char *buf, int i, char **arg, char **args)
 {
 	if (i == EOF)
 	{
-		printf("Reached EOF\n");
+		write(STDOUT_FILENO, "reached EOF\n", 12);
 		write(STDOUT_FILENO, "\n", 1);
 		if (buf != NULL)
 		{

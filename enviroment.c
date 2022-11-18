@@ -1,20 +1,16 @@
-#include "simple_shell.h"
-
+#include "shell.h"
 /**
- * environment - prints the environment
+ * environment - prints the environ
  * Return: always 0
-*/
+ */
 int environment(void)
 {
-	int i, j;
+	int i;
 
 	i = 0;
-	while (environ[i] != NULL)
+	while (environ[i])
 	{
-		for (j = 0; environ[j] != NULL; j++)
-			;
-
-		write(STDOUT_FILENO, environ[i], j);
+		write(STDOUT_FILENO, environ[i], string_size(environ[i]));
 		write(STDOUT_FILENO, "\n", 1);
 		i++;
 	}

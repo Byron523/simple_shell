@@ -1,11 +1,11 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
- * str_cpy - copies string to another variable
- * @s1: 1st string to be copied desc
- * @s2: 2ndto be copied from
- * Return: a copy of a new string
-*/
+ * str_cpy - cpies a string to another variable
+ * @s1: desc
+ * @s2: src
+ * Return: ponter 2 a copy of the new string
+ */
 char *str_cpy(char *s1, char *s2)
 {
 	int i, j;

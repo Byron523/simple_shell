@@ -1,23 +1,20 @@
-#include "simple_shell.h"
+#include "shell.h"
 
 /**
- * path_locater - locates the path var from environ
+ * path_locater - locates the path of the envrion
  * Return: pointer to path
-*/
+ */
 char *path_locater()
 {
 	char *s;
-	int i, j;
+	int i;
 
 	s = NULL;
 	for (i = 0; environ[i] != NULL; i++)
 	{
 		if (_strcmp(environ[i], "PATH") == 0)
 		{
-			for (j = 0; environ[j] != NULL; j++)
-				;
-
-			s = malloc(sizeof(char *) * j);
+			s = malloc(sizeof(char *) * string_size(environ[i]));
 			if (s == NULL)
 			{
 				_free(1, s);
